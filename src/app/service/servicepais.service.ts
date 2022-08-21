@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {listadatos} from "../model/datos";
-import {Pais} from "../model/pais";
-import {Observable} from "rxjs";
-import {tap} from "rxjs/operators";
+import {Observable, tap} from "rxjs";
+import {Pais} from "../models/pais";
+import {listadatos} from "../models/datos";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicepaisService {
-
   private api: string ="http://181.123.253.74:8080/stock/";
-
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
   getPaises(): Observable<listadatos<Pais>> {
     return this.http.get<listadatos<Pais>>(this.api);
   }
@@ -29,6 +25,5 @@ export class ServicepaisService {
         )
       );
   }
-
 
 }

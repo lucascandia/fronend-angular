@@ -11,9 +11,7 @@ describe('PaisAgregarComponent', () => {
       declarations: [ PaisAgregarComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(PaisAgregarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

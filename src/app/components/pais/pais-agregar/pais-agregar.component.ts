@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Pais} from "../../model/pais";
-import {ServicepaisService} from "../../service/servicepais.service";
+import {Pais} from "../../../models/pais";
+import {ServicepaisService} from "../../../service/servicepais.service";
 
 @Component({
   selector: 'app-pais-agregar',
@@ -8,10 +8,10 @@ import {ServicepaisService} from "../../service/servicepais.service";
   styleUrls: ['./pais-agregar.component.css']
 })
 export class PaisAgregarComponent implements OnInit {
+
   pais: Pais = new Pais();
   mensaje: string = "";
   constructor(private servicioPais: ServicepaisService) { }
-
   ngOnInit(): void {
   }
   guardar(): void{
@@ -22,6 +22,5 @@ export class PaisAgregarComponent implements OnInit {
       error => console.log("error: "+error)
     );
   }
-
 
 }

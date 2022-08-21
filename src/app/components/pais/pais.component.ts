@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Pais} from "../model/pais";
-import {ServicepaisService} from "../service/servicepais.service";
+import {Pais} from "../../models/pais";
+import {ServicepaisService} from "../../service/servicepais.service";
 
 @Component({
   selector: 'app-pais',
@@ -9,13 +9,17 @@ import {ServicepaisService} from "../service/servicepais.service";
 })
 export class PaisComponent implements OnInit {
   paises: Pais[] = [];
-  constructor(private servicioPais: ServicepaisService) { }
+
+  constructor(private servicioPais: ServicepaisService ) {
+  }
+
 
   ngOnInit(): void {
     this.servicioPais.getPaises().subscribe(
       entity => this.paises = entity.lista,
       error =>console.log('no se pudieron conseguir los paises')
     );
+
   }
 
 }
